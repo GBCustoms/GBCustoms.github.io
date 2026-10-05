@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steering wheel catalog | GBCustoms</title>
+<meta name="description" content="Browse our range of sport, classic and luxury steering wheels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#" id="brand">GBCustoms</a>
+  <form class="search" role="search" onsubmit="return false">
+    <label class="sr-only" for="search">Search the catalog</label>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="search" type="search" placeholder="Search by name, SKU or material" autocomplete="off">
+  </form>
+  <a class="btn contact-top" id="contact-top" href="#" target="_blank" rel="noopener">Contact us</a>
+</header>
+
+<section class="intro">
+  <h1>Steering wheels for every kind of driving</h1>
+  <p>Sport, classic and luxury wheels in one place. Filter by car brand, material or shape, open a wheel for the full details, then request a quote.</p>
+</section>
+
+<main class="layout">
+  <div class="side">
+    <nav class="cats" aria-label="Categories">
+      <h2>Categories</h2>
+      <ul id="cats"></ul>
+    </nav>
+    <nav class="cats" aria-label="Car brands">
+      <h2>Car brand</h2>
+      <ul id="brands"></ul>
+    </nav>
+  </div>
+
+  <section aria-label="Products">
+    <div class="toolbar">
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="controls">
+        <label>Material <select id="f-mat"></select></label>
+        <label>Shape <select id="f-shape"></select></label>
+        <label>Size
+          <select id="f-size">
+            <option value="">All sizes</option>
+            <option value="s">Under 370 mm</option>
+            <option value="m">370 to 389 mm</option>
+            <option value="l">390 mm and over</option>
+          </select>
+        </label>
+        <label>Sort by
+          <select id="f-sort">
+            <option value="featured">Featured</option>
+            <option value="low">Price, low to high</option>
+            <option value="high">Price, high to low</option>
+            <option value="name">Name, A to Z</option>
+          </select>
+        </label>
+        <label><input type="checkbox" id="f-stock"> In stock only</label>
+      </div>
+    </div>
+
+    <ul class="grid" id="grid"></ul>
+
+    <div class="empty" id="empty" hidden>
+      <p>No wheels match your search. Try a different term or clear the filters.</p>
+      <button class="btn ghost" id="clear" type="button">Clear filters</button>
+    </div>
+
+    <div class="more" id="more" hidden>
+      <p id="shown"></p>
+      <button class="btn ghost" id="more-btn" type="button"></button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p id="footer-text">GBCustoms. Prices and availability may change without notice.</p>
+  <a class="btn ghost" id="contact-foot" href="#" target="_blank" rel="noopener">Ask a question</a>
+</footer>
+
+<dialog id="dlg" aria-labelledby="d-title">
+  <div class="d-wrap" id="dlg-body"></div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
